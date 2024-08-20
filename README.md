@@ -18,6 +18,7 @@ Run as a stand-alone script:
 1. Clone this repository, or download `forward.sh` as single file
 2. Run `./forward.sh --help` for usage info
 
+```
 Usage:
    -h | --help       Display this help text
    -v | --version    Display CPU Sentinel version
@@ -26,6 +27,7 @@ Usage:
    -l | --list       List all configured iptables NAT rules
    -f | --flush      Flush iptables NAT rules configured by this tool (NOTE: currently, this will flush all NAT rules)
    --brew-config     Display config, log, and err file paths if installed and run as a homebrew service (NOTE: not yet implemented
+```
 
 ## Testing
 Once rules are in place on a proxy host, start a simple TCP server on the destination host using
