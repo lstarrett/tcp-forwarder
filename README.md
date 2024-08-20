@@ -1,15 +1,17 @@
 # TCP Forwarder
-Utility script to configure a proxy host to forward all TCP traffic (bound for all ports or a
-specific port) to a remote host, masquerading as the original client so that responses are sent
-directly back to the initiating client.
+Utility script to configure a proxy host to forward all TCP traffic from a client host (bound for
+all ports or a specific port) to a destination host, masquerading as the original client so that
+responses from the destination host are sent directly back to the initiating client.
 
 Utilizes the iptables program, and is tested on Linux hosts, but should work anywhere iptables is
 found.
 
 ## Requirements
 * bash
-* root permissions (for renice privilege)
 * iptables
+* netcat (for testing)
+* root permissions (depending on host configuration)
+
 
 ## Usage
 Run as a stand-alone script:
