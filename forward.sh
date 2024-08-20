@@ -3,7 +3,7 @@
 # TCP Forwarder
 #
 # This script will configure the local host to forward all TCP traffic (bound for all ports or a
-# specific port) to a remote host, masquerading as the original client so that responses are sent
+# specific port) to a destination host, masquerading as the original client so that responses are sent
 # directly back to the initiating client.
 #
 # Utilizes the iptables utility, and tested on Linux hosts, but should work anywhere iptables is
@@ -15,9 +15,9 @@
 display_help() {
   echo "Usage:"
   echo "   -h | --help       Display this help text"
-  echo "   -v | --version    Display CPU Sentinel version"
-  echo "   -d | --dest-ip    Remote host IP to forward TCP traffic"
-  echo "   -p | --dest-port  Local and remote host port to listen for traffic and forward to remote host on the same port"
+  echo "   -v | --version    Display TCP Forwarder version"
+  echo "   -d | --dest-ip    Destination host IP to forward TCP traffic"
+  echo "   -p | --dest-port  Local and destination host port to listen for traffic and forward to destination host on the same port"
   echo "   -l | --list       List all configured iptables NAT rules"
   echo "   -f | --flush      Flush iptables NAT rules configured by this tool (NOTE: currently, this will flush all NAT rules)"
   echo "   --brew-config     Display config, log, and err file paths if installed and run as a homebrew service (NOTE: not yet implemented"
@@ -35,7 +35,7 @@ list_rules() {
   echo
 }
 
-# Forward TCP traffic to remote host, masquerading as original source
+# Forward TCP traffic to destination host, masquerading as original source
 forward_tcp() {
 
   # Flush all NAT rules and exit

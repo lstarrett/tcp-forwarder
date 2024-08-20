@@ -21,9 +21,9 @@ Run as a stand-alone script:
 ```
 Usage:
    -h | --help       Display this help text
-   -v | --version    Display CPU Sentinel version
-   -d | --dest-ip    Remote host IP to forward TCP traffic
-   -p | --dest-port  Local and remote host port to listen for traffic and forward to remote host on the same port
+   -v | --version    Display TCP Forwarder version
+   -d | --dest-ip    Destination host IP to forward TCP traffic
+   -p | --dest-port  Local and Destination host port to listen for traffic and forward to destination host on the same port
    -l | --list       List all configured iptables NAT rules
    -f | --flush      Flush iptables NAT rules configured by this tool (NOTE: currently, this will flush all NAT rules)
    --brew-config     Display config, log, and err file paths if installed and run as a homebrew service (NOTE: not yet implemented
